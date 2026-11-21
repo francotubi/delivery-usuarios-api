@@ -1,0 +1,22 @@
+server:
+  port: ${PORT:8081}
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/delivery_users}
+    username: ${DB_USER:delivery_users}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+app:
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
+  jwt:
+    issuer: ${JWT_ISSUER:delivery-usuarios}
+    audience: deliveryapp
+    private-key: ${JWT_PRIVATE_KEY:file:./private.pem}
+    public-key: ${JWT_PUBLIC_KEY:file:./public.pem}
+  cookie-secure: ${COOKIE_SECURE:true}
+  admin:
+    email: ${ADMIN_EMAIL:}
+    password: ${ADMIN_PASSWORD:}
